@@ -23,6 +23,8 @@ class Game
   end
 
   def join(player)
-    @players.push(player)
+    if @players.length < @max
+      @players.push(player)
+    end
   end
 end

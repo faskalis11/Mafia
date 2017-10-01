@@ -7,13 +7,13 @@ describe 'My behaviour' do
 
   it 'should have roles for a game' do
     roles = ["Citizen", "Mafia"]
-    new_game = Game.new(roles, nil, nil)
+    new_game = Game.new(roles, 2, 10)
     expect(new_game.roles).not_to be_empty
   end
 
   it 'should have minimum and maximum players limit. Maximum must not be lower than minimum ' do
     roles = ["Citizen", "Mafia"]
-    min, max = 4, 10
+    min, max = 4, 8
     new_game = Game.new(roles, min, max)
     expect(new_game.min).to be > 0
     expect(new_game.max).to be > 0
@@ -23,7 +23,7 @@ describe 'My behaviour' do
 
   it 'should accept players to the game' do
     roles = ["Citizen", "Mafia"]
-    min, max = 4, 10
+    min, max = 4, 9
     new_game = Game.new(roles, min, max)
     player1 = Player.new
     new_game.join(player1)
@@ -46,7 +46,9 @@ describe 'My behaviour' do
     new_game.join(player4)
     new_game.join(player5)
 
-    expect(new_game.players.length).not_to be > max
+    expect(new_game.players.length).to be <= max
   end
+
+
 
 end
