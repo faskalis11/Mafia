@@ -31,5 +31,22 @@ describe 'My behaviour' do
 
   end
 
+  it 'should not allow more player than there is a limit' do
+    roles = ["Citizen", "Mafia"]
+    min, max = 2, 4
+    new_game = Game.new(roles, min, max)
+    player1 = Player.new
+    player2 = Player.new
+    player3 = Player.new
+    player4 = Player.new
+    player5 = Player.new
+    new_game.join(player1)
+    new_game.join(player2)
+    new_game.join(player3)
+    new_game.join(player4)
+    new_game.join(player5)
+
+    expect(new_game.players.length).not_to be > max
+  end
 
 end
