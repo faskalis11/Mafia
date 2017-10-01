@@ -49,6 +49,17 @@ describe 'My behaviour' do
     expect(new_game.players.length).to be <= max
   end
 
+  it 'already joined player cannot join twice' do
+    roles = ["Citizen", "Mafia"]
+    min, max = 2, 4
+    new_game = Game.new(roles, min, max)
+    player1 = Player.new
+    new_game.join(player1)
+    new_game.join(player1)
+
+
+    expect(new_game.players.length).to be 1
+  end
 
 
 end
