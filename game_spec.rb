@@ -1,6 +1,6 @@
 require 'rspec'
 require_relative 'player'
-#require_relative 'game'
+require_relative 'game'
 
 
 describe 'My behaviour' do
@@ -10,6 +10,7 @@ describe 'My behaviour' do
     newGame = Game.new(roles)
     expect(newGame.roles).not_to be_empty
   end
+
 
 
 end
