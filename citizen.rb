@@ -1,6 +1,7 @@
 class Citizen
 
   attr_accessor :dead
+
   def initialize
     @dead = false
   end

@@ -1,6 +1,7 @@
 require 'rspec'
 require_relative 'player'
 require_relative 'game'
+require_relative 'citizen'
 
 
 describe 'My behaviour' do
@@ -59,5 +60,29 @@ describe 'My behaviour' do
     expect(new_game.players.length).to be 1
   end
 
+  it 'should let know alive players' do
+    roles = ["Citizen", "Mafia"]
+    min, max = 2, 4
+    new_game = Game.new(roles, min, max)
+    player1 = Player.new
+    player2 = Player.new
+    player3 = Player.new
+    player4 = Player.new
+    player5 = Player.new
+    new_game.join(player1)
+    new_game.join(player2)
+    new_game.join(player3)
+    new_game.join(player4)
+    new_game.join(player5)
+    player1.role = Citizen.new
+    player2.role = Citizen.new
+    player3.role = Citizen.new
+    player4.role = Citizen.new
+    player5.role = Citizen.new
+    player1.role.got_shot()
+    player5.got_shot()
+    expect(new_game.get_alive_players.length).to be 3
+
+  end
 
 end
