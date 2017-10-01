@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'player'
+require_relative '../player'
 
 describe 'Player behaviour' do
 

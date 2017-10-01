@@ -1,0 +1,3 @@
+class Mafia < Citizen
+
+end
