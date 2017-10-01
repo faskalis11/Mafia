@@ -27,4 +27,15 @@ class Game
       @players.push(player)
     end
   end
+
+  def get_alive_players()
+    array = []
+    @players.each do |p|
+      if p.role.dead == false
+        array.push(p)
+      end
+    end
+    return array
+  end
+
 end

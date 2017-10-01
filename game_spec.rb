@@ -80,7 +80,7 @@ describe 'My behaviour' do
     player4.role = Citizen.new
     player5.role = Citizen.new
     player1.role.got_shot()
-    player5.got_shot()
+    player5.role.got_shot()
     expect(new_game.get_alive_players.length).to be 3
 
   end
