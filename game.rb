@@ -3,6 +3,7 @@ class Game
     @roles = roles
     @min = min
     @max = max
+    @players = []
   end
 
   def roles
@@ -15,5 +16,13 @@ class Game
 
   def min
     @min
+  end
+
+  def players
+    @players
+  end
+
+  def join(player)
+    @players.push(player)
   end
 end
