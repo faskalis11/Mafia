@@ -56,8 +56,6 @@ describe 'My behaviour' do
     player1 = Player.new
     new_game.join(player1)
     new_game.join(player1)
-
-
     expect(new_game.players.length).to be 1
   end
 
