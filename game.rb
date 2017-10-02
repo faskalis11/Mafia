@@ -1,3 +1,4 @@
+# game or just a room for mafia game
 class Game
   def initialize(roles, min, max)
     @roles = roles
@@ -6,21 +7,10 @@ class Game
     @players = []
   end
 
-  def roles
-    @roles
-  end
-
-  def max
-    @max
-  end
-
-  def min
-    @min
-  end
-
-  def players
-    @players
-  end
+  attr_reader :roles
+  attr_reader :max
+  attr_reader :min
+  attr_reader :players
 
   def join(player)
     if @players.length < @max && !@players.include?(player)
@@ -28,14 +18,11 @@ class Game
     end
   end
 
-  def get_alive_players()
+  def alive_players
     array = []
-    @players.each do |p|
-      if p.role.dead == false
-        array.push(p)
-      end
+    @players.each do |player|
+      array.push(player) unless player.role.dead
     end
-    return array
+    array
   end
-
 end

@@ -1,10 +1,4 @@
+# a player who will be able to join mafia game
 class Player
-  def role
-    @role
-  end
-
-  def role=(str)
-    @role = str
-  end
-
+  attr_accessor :role
 end
