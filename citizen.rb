@@ -1,6 +1,7 @@
 # A citizen role class
 class Citizen
-  attr_reader :dead
+  attr_accessor :dead
+  attr_accessor :vote
 
   def initialize
     @dead = false

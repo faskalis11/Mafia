@@ -17,19 +17,21 @@ describe 'Citizen behaviour' do
     min = 2
     max = 4
     new_game = Game.new(roles, min, max)
-    citizen = Citizen.new
-    citizen2 = Mafia.new
-    citizen3 = Citizen.new
-    new_game.join(citizen)
-    new_game.join(citizen2)
-    new_game.join(citizen3)
-    new_game.start_voting
-    citizen.vote(citizen2)
-    citizen2.vote(citizen)
-    citizen3.vote(citizen2)
-    new_game.close_voting
-    expect(citizen2.dead).to be true
-    expect(citizen.dead).to be false
-    expect(citizen3.dead).to be false
+    player = Player.new
+    player2 = Player.new
+    player3 = Player.new
+    player.role = Citizen.new
+    player2.role = Mafia.new
+    player3.role = Citizen.new
+    new_game.join(player)
+    new_game.join(player2)
+    new_game.join(player3)
+    player.role.vote = player2
+    player2.role.vote = player
+    player3.role.vote = player2
+    new_game.collect_votes
+    expect(player2.role.dead).to be true
+    expect(player.role.dead).to be false
+    expect(player3.role.dead).to be false
   end
 end
