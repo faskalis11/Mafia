@@ -94,5 +94,5 @@ end
 
 describe 'battle beetween players' do
 
-  it should
+  it 'should fight monster'
 end
