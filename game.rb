@@ -10,8 +10,8 @@ class Game
   attr_reader :roles, :max, :min, :players
 
   def join(player)
-    if @players.length < @max && !@players.include?(player)
-      @players.push(player)
+    if @players.length < @max
+      @players.push(player) unless @players.include?(player)
     end
   end
 
@@ -26,7 +26,7 @@ class Game
   def collect_votes
     candidates = generate_voting_table
     alive_players.each do |player|
-      candidates[player.role.vote] = candidates[player.role.vote] + 1 # unless player.role.vote.nil?
+      candidates[player.role.vote] += 1
     end
     voted_out = candidates.key(candidates.values.max)
     voted_out.role.dead = true

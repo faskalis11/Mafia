@@ -13,4 +13,10 @@ describe 'Player behaviour' do
     player.role = 'Mafia'
     expect(player.role).to eq('Mafia')
   end
+
+  it 'should have gain experience' do
+    player = Player.new
+    player.experience += 10
+    expect(player.experience).to eq(10)
+  end
 end

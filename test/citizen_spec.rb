@@ -4,7 +4,7 @@ require_relative '../game'
 require_relative '../citizen'
 require_relative '../mafia'
 
-describe 'Citizen behaviour' do
+RSpec.describe 'Citizen behaviour' do
   it 'can be alive. Could be shot, then could be dead' do
     citizen = Citizen.new
     expect(citizen.dead).to be false
