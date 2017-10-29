@@ -91,3 +91,8 @@ describe 'Mafia game behaviour' do
     expect(new_game.alive_players.length).to be 3
   end
 end
+
+describe 'battle beetween players' do
+
+  it should
+end
