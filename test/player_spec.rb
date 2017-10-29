@@ -25,8 +25,8 @@ describe 'Player behaviour' do
     player.attack = 5
     player.defence = 3
     player.health -= 10
-    expect(player.attack).to be eq(5)
-    expect(player.defence).to be eq(3)
-    expect(player.heath).to be eq(90)
+    expect(player.attack).to  eq(5)
+    expect(player.defence).to  eq(3)
+    expect(player.health).to eq(90)
   end
 end
