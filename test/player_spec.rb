@@ -16,6 +16,7 @@ describe 'Player behaviour' do
 
   it 'should have gain experience' do
     player = Player.new
+    puts "#{player.experience}"
     player.experience += 10
     expect(player.experience).to eq(10)
   end
