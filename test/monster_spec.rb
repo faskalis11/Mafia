@@ -1,12 +1,12 @@
 require 'rspec'
 require_relative '../player'
 require_relative '../game'
-require_relative '../citizen'
+require_relative '../monster'
 
 RSpec.describe 'monster behavior' do
-  it 'should let monster to have dead status' do
-    rat = Monster.New(1, 1, 0, 5)
-    rat.expect(rat.dead).to eq(false)
+  it 'should let monster to have alive/dead status' do
+    rat = Monster.new(1, 1, 0, 5)
+    expect(rat.dead).to eq(false)
   end
 
 end
