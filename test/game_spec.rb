@@ -94,5 +94,11 @@ end
 
 describe 'battle beetween players' do
 
-  it 'should fight monster'
+  it 'should fight monster' do
+    player = Player.new
+    rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
+    game = Game.new(%[Citizen], 1, 10)
+    winner = game.fight(player, rat)
+    expect(rat.dead). to eq(true)
+  end
 end
