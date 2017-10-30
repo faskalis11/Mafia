@@ -10,7 +10,12 @@ RSpec.describe 'Mafia behaviour' do
     mafia = Mafia.new
     mafia.add_equipment(Equipment.new('A pistol', 5, 0, 5))
     expect(mafia.equipments).not_to be_empty
-
   end
 
+  it 'has own bonuses' do
+    mafia = Mafia.new
+    expect(mafia.attack).to be eq(8)
+    expect(mafia.defence).to be eq(6)
+    expect(mafia.attack).to be eq(105)
+  end
 end
