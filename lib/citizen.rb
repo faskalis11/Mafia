@@ -30,4 +30,8 @@ class Citizen
       @health += equip.health
     }
   end
+
+  def to_s
+     "Attack: #{@attack} Defence: #{@defence}  Health:  #{@health}"
+  end
 end
