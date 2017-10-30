@@ -12,9 +12,22 @@ class Citizen
 
   def add_equipment(equipment)
     @equipments.insert(0, equipment)
+    calculate_stats
   end
 
   def got_shot
     @dead = true
+  end
+
+  def calculate_stats
+    #default stats
+    @attack = 3
+    @defence = 1
+    @health = 100
+    @equipments.each { |equip|
+      @attack += equip.attack
+      @defence += equip.defence
+      @health += equip.health
+    }
   end
 end
