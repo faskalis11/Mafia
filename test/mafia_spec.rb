@@ -14,8 +14,8 @@ RSpec.describe 'Mafia behaviour' do
 
   it 'has own bonuses' do
     mafia = Mafia.new
-    expect(mafia.attack).to be eq(8)
-    expect(mafia.defence).to be eq(6)
-    expect(mafia.attack).to be eq(105)
+    expect(mafia.attack).to eq(8)
+    expect(mafia.defence).to  eq(6)
+    expect(mafia.health).to eq(105)
   end
 end

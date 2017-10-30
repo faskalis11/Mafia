@@ -9,9 +9,9 @@ RSpec.describe 'Equipment' do
   it 'can add stats' do
     equipment = Equipment.new('A pistol', 5, 1, 0)
     player = Player.new
-    mafia = Mafia.new
-    player.role = mafia
-    mafia.add_equipment(equipment)
+    citizen = Citizen.new
+    player.role = citizen
+    citizen.add_equipment(equipment)
     expect(player.role.attack).to eq(8)
   end
 
