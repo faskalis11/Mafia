@@ -11,17 +11,17 @@ RSpec.describe 'monster behavior' do
   end
 end
 
-# RSpec::Matchers.define :be_alive do |expected|
-#   match do |actual|
-#     return true if actual.level > expected.level
-#     return true if (actual.attack + actual.defence) > (expected.attack + expected.defence)
-#     false
-#   end
-# end
+RSpec::Matchers.define :be_stronger_than do |expected|
+  match do |actual|
+    return true if actual.level > expected.level
+    return true if (actual.attack + actual.defence) > (expected.attack + expected.defence)
+    false
+  end
+end
 
-# rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
-# bear = Monster.new('Beat', 'Big',10, 10, 15, 200)
-#
-# Rspec.describe bear do
-#   it { is_expected.be_stronger_than(rat)}
-# end
+rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
+bear = Monster.new('Beat', 'Big',10, 10, 15, 200)
+
+RSpec.describe bear do
+  it { is_expected.to be_stronger_than(rat)}
+end

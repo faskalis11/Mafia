@@ -9,9 +9,10 @@ puts 'Welcome to mafia'
 
 player = Player.new
 player.role = Citizen.new
+game = Game.new([Citizen, Mafia], 1, 4)
 
 while (true)
-  puts '1. Fight random player'
+  puts '1. Fight monster'
   puts '2. Choose role'
   puts '3. Buy guns'
   puts '4. Kill other user'
@@ -24,6 +25,15 @@ while (true)
   case choice.to_i
     when 1
       puts 'Selected 1'
+      monsters = [Monster.new('Rat', 'Annoying', 1, 2, 0, 5),
+                  Monster.new('Snake', 'Come here...', 2, 3, 1, 6),
+                  Monster.new('Local hunter', 'He is crazy', 6, 5, 6, 60)
+      ]
+      monsters.each.with_index {|monster, index| puts "#{index}. #{monster.name} #{monster.description} #{monster.level}lvl"}
+      puts 'Choose enemy'
+      enemy_choice = gets.chomp
+      winner = game.fight(player.role, monsters[enemy_choice.to_i]) if ((0..2).include?(enemy_choice.to_i))
+      player.experience += 10 if winner == player.role
     when 2
       puts 'Selected 2'
       roles = [Citizen.new, Mafia.new]

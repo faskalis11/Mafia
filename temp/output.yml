@@ -1,2 +1,8 @@
 --- !ruby/object:Player
-experience: 0
+experience: 40
+role: !ruby/object:Mafia
+  equipments: []
+  attack: 8
+  defence: 6
+  health: 105
+  dead: false

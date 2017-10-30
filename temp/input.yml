@@ -1,2 +1,8 @@
----
+--- !ruby/object:Player
 experience: 50
+role: !ruby/object:Citizen
+  equipments: []
+  attack: 3
+  defence: 1
+  health: 100
+  dead: false

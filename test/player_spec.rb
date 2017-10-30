@@ -1,4 +1,5 @@
 require 'rspec'
+require 'rspec/expectations'
 require_relative '../lib/player'
 require_relative '../lib/citizen'
 require_relative '../lib/mafia'
@@ -21,8 +22,6 @@ describe 'Player behaviour' do
     player.experience += 10
     expect(player.experience).to eq(10)
   end
-
-
 end
 
 

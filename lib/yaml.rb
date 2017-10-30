@@ -14,5 +14,7 @@ class Yaml
     rescue ArgumentError => e
       puts "Could not parse YAML: #{e.message}"
     end
+    puts player
+    player
   end
 end
