@@ -1,7 +1,9 @@
 require 'rspec'
-require_relative '../player'
-require_relative '../game'
-require_relative '../citizen'
+require_relative '../lib/player'
+require_relative '../lib/game'
+require_relative '../lib/citizen'
+require_relative '../lib/monster'
+
 
 describe 'Mafia game behaviour' do
   it 'should have roles for a game' do
@@ -99,6 +101,6 @@ describe 'battle beetween players' do
     rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
     game = Game.new(%[Citizen], 1, 10)
     winner = game.fight(player, rat)
-    expect(rat.dead). to eq(true)
+    expect(winner). to eq(player)
   end
 end

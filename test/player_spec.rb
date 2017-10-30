@@ -1,5 +1,7 @@
 require 'rspec'
-require_relative '../player'
+require_relative '../lib/player'
+require_relative '../lib/citizen'
+require_relative '../lib/mafia'
 
 describe 'Player behaviour' do
   it 'should get a Citizen role' do
@@ -29,4 +31,18 @@ describe 'Player behaviour' do
     expect(player.defence).to  eq(3)
     expect(player.health).to eq(90)
   end
+end
+
+
+RSpec::Matchers.define :be_role do |expected| # Matcher
+  match do |actual|
+    actual.role.instance_of?(expected)
+  end
+end
+
+player = Player.new
+player.role = Mafia.new
+
+RSpec.describe player do
+  it { is_expected.to be_role(Mafia) }
 end

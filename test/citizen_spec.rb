@@ -1,8 +1,8 @@
 require 'rspec'
-require_relative '../player'
-require_relative '../game'
-require_relative '../citizen'
-require_relative '../mafia'
+require_relative '../lib/player'
+require_relative '../lib/game'
+require_relative '../lib/citizen'
+require_relative '../lib/mafia'
 
 RSpec.describe 'Citizen behaviour' do
   it 'can be alive. Could be shot, then could be dead' do
