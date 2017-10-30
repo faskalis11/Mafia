@@ -98,9 +98,10 @@ describe 'battle beetween players' do
 
   it 'should fight monster' do
     player = Player.new
+    player.role = Citizen.new
     rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
     game = Game.new(%[Citizen], 1, 10)
-    winner = game.fight(player, rat)
-    expect(winner). to eq(player)
+    winner = game.fight(player.role, rat)
+    expect(winner). to eq(player.role)
   end
 end

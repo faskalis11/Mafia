@@ -1,11 +1,12 @@
 # A citizen role class
 class Citizen
-  attr_accessor :dead
-  attr_accessor :vote
-  attr_accessor :equipments
+  attr_accessor :dead, :attack, :defence, :health, :vote, :equipments
 
   def initialize
     @equipments = Array.new
+    @attack = 3
+    @defence = 1
+    @health = 100
     @dead = false
   end
 

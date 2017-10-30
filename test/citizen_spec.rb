@@ -34,4 +34,14 @@ RSpec.describe 'Citizen behaviour' do
     expect(player.role.dead).to be false
     expect(player3.role.dead).to be false
   end
+
+  it 'should have attack, defence and health' do
+    citizen = Citizen.new
+    citizen.attack = 5
+    citizen.defence = 3
+    citizen.health -= 10
+    expect(citizen.attack).to  eq(5)
+    expect(citizen.defence).to  eq(3)
+    expect(citizen.health).to eq(90)
+  end
 end

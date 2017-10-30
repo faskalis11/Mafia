@@ -12,7 +12,7 @@ RSpec.describe 'Equipment' do
     mafia = Mafia.new
     player.role = mafia
     mafia.add_equipment(equipment)
-    expect(player.attack).to eq(8)
+    expect(player.role.attack).to eq(8)
   end
 
 end
