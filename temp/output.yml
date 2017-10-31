@@ -1,8 +1,8 @@
 --- !ruby/object:Player
-experience: 40
-role: !ruby/object:Mafia
+experience: 0
+role: !ruby/object:Citizen
   equipments: []
-  attack: 8
-  defence: 6
-  health: 105
+  attack: 3
+  defence: 1
+  health: 100
   dead: false

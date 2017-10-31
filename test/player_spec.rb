@@ -24,8 +24,7 @@ describe 'Player behaviour' do
   end
 end
 
-
-RSpec::Matchers.define :be_role do |expected| # Matcher
+RSpec::Matchers.define :be_role do |expected| # Matcher nuolaida teisinga, sudetinga struktura, kolekcija objekto tvarkingas
   match do |actual|
     actual.role.instance_of?(expected)
   end

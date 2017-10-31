@@ -44,15 +44,19 @@ while (true)
 
     when 3
       puts 'Selected 3'
+      puts 'Buy a DLC'
     when 4
       puts 'Selected 4'
+      puts 'Buy a DLC'
     when 5
       puts 'Selected 5'
       puts "#{player.role.class.to_s}, #{player.experience} exp, #{player.role}"
     when 6
       puts 'Selected 6'
+      puts 'Buy a DLC'
     when 7
       puts 'Selected 7'
+      puts 'Buy a DLC'
     when 8
       puts 'Selected 8'
       yaml = Yaml.new
