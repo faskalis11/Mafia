@@ -14,5 +14,4 @@ RSpec.describe 'Equipment' do
     citizen.add_equipment(equipment)
     expect(player.role.attack).to be <= 8
   end
-
 end

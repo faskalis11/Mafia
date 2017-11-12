@@ -10,9 +10,8 @@ class Game
   attr_reader :roles, :max, :min, :players
 
   def join(player)
-    if @players.length < @max
-      @players.push(player) unless @players.include?(player)
-    end
+    return unless @players.length < @max
+    @players.push(player) unless @players.include?(player)
   end
 
   def alive_players
@@ -41,17 +40,19 @@ class Game
   end
 
   def fight(attacker, defender)
-    damage1 = 0
-    damage2 = 0
-    damage1 = attacker.attack - defender.defence unless defender.defence > attacker.attack
-    damage2 = defender.attack - attacker.defence unless attacker.defence > defender.attack
-    attacker.health -= damage2
-    defender.health -= damage1
-    attacker.dead = true if attacker.health <= 0
-    defender.dead = true if defender.health <= 0
-    return defender if attacker.dead
-    return attacker if defender.dead
-    return attacker if attacker.health > defender.health
-    defender
+    att_dmg = 0
+    def_dmg = 0
+    att_att = attacker.attack
+    att_def = attacker.defence
+    def_att = defender.attack
+    def_def = defender.defence
+    att_h = attacker.health
+    def_h = defender.health
+    att_dmg = att_att - def_def unless def_def > att_att
+    def_dmg = def_att - att_def unless att_def > def_att
+    return defender if att_dmg.zero?
+    return attacker if def_dmg.zero?
+    return defender if def_h / att_dmg > att_h / def_dmg
+    attacker
   end
 end

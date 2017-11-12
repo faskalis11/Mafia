@@ -1,6 +1,5 @@
 # a game role
 class Mafia < Citizen
-
   def initialize
     super
     @attack += 5

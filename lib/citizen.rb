@@ -3,7 +3,7 @@ class Citizen
   attr_accessor :dead, :attack, :defence, :health, :vote, :equipments
 
   def initialize
-    @equipments = Array.new
+    @equipments = []
     @attack = 3
     @defence = 1
     @health = 100
@@ -20,7 +20,7 @@ class Citizen
   end
 
   def calculate_stats
-    #default stats
+    # default stats
     @attack = 3
     @defence = 1
     @health = 100
@@ -32,6 +32,6 @@ class Citizen
   end
 
   def to_s
-     "Attack: #{@attack} Defence: #{@defence}  Health:  #{@health}"
+    "Attack: #{@attack} Defence: #{@defence}  Health:  #{@health}"
   end
 end

@@ -2,8 +2,7 @@
 class Player
   attr_accessor :role, :experience
 
-  def initialize()
+  def initialize
     @experience = 0
   end
-
 end

@@ -1,12 +1,12 @@
-#player is going to fight these monsters
+# player is going to fight these monsters
 class Monster
-  attr_accessor :level, :attack, :defence, :health, :dead
-  attr_reader :name, :description
+  attr_accessor :attack, :defence, :health, :dead
+  attr_reader :name, :description, :level
 
-  def initialize(name, description, level, attack, defence, health)
+  def initialize(name, description, attack, defence, health)
     @name = name
-    @description =description
-    @level = level
+    @description = description
+    @level = ((attack + defence) / 2).to_i
     @attack = attack
     @defence = defence
     @health = health

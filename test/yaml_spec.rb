@@ -3,7 +3,6 @@ require 'yaml'
 require_relative '../lib/player'
 require_relative '../lib/yaml'
 
-
 RSpec.describe 'Yaml read and write' do
   it 'write to file' do
     yaml = Yaml.new
@@ -21,5 +20,4 @@ RSpec.describe 'Yaml read and write' do
     player = yaml.read_player('files/read_test.yml')
     expect(player.experience).to eq(100)
   end
-
 end

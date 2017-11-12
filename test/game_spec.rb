@@ -4,7 +4,6 @@ require_relative '../lib/game'
 require_relative '../lib/citizen'
 require_relative '../lib/monster'
 
-
 describe 'Mafia game behaviour' do
   it 'should have roles for a game' do
     roles = %w[Citizen Mafia]
@@ -95,12 +94,11 @@ describe 'Mafia game behaviour' do
 end
 
 describe 'battle beetween players' do
-
   it 'should fight monster' do
     player = Player.new
     player.role = Citizen.new
-    rat = Monster.new('Rat', 'Just annoying',1, 1, 0, 5)
-    game = Game.new(%[Citizen], 1, 10)
+    rat = Monster.new('Rat', 'Just annoying', 1, 0, 5)
+    game = Game.new([Citizen], 1, 10)
     winner = game.fight(player.role, rat)
     expect(winner). to eq(player.role)
   end
